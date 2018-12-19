@@ -11,8 +11,8 @@ require 'rack_session_access/capybara'
 RSpec.configure do |config|
   config.before(:all, type: :request) do
     WebMock.allow_net_connect!
-  end  
-  
+  end
+
   config.include Capybara::DSL
 
   config.before(:each) do
