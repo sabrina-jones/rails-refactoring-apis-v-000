@@ -16,7 +16,7 @@ config.include Capybara::DSL
     WebMock.allow_net_connect!
   end
 
-  
+
 
   config.before(:each) do
     stub_request(:get, "https://api.github.com/user/repos").
