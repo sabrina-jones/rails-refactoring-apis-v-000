@@ -10,11 +10,13 @@ require 'rack_session_access/capybara'
 
 RSpec.configure do |config|
 
+config.include Capybara::DSL
+
   config.before(:all, type: :request) do
     WebMock.allow_net_connect!
   end
 
-  config.include Capybara::DSL
+  
 
   config.before(:each) do
     stub_request(:get, "https://api.github.com/user/repos").
